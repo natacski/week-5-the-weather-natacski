@@ -7,22 +7,44 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
     <link href= "index.css" rel="stylesheet"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
   </head>
   <body>
 
     <div class="container">
-      <div class="jumbotron bg-dark text-white">
-        <h1 class="display-4">City Weather</h1>
+      <div class="jumbotron text-white">
+        <div class="icons">
+          <img src="img/rain.svg">
+          <img src="img/sun.svg">
+          <img src="img/flash.svg">
+          <img src="img/snowflake.svg">
+        </div><br>
+        <h1 class="display-4 text-warning font-weight-bold">City Weather</h1>
         <p class="lead">This is a simple weather app. Enter the name of the city and will get all the information about the city's weather</p>
         <hr class="my-4">
         <div class="input-group mb-3 container">
-          <input type="text" class="form-control" placeholder="City Name" name="city" id="city">
+          <input type="text" class="form-control border border-warning" placeholder="City Name" name="city" id="city">
           <div class="input-group-append">
-              <button class="btn btn-outline-info" type="button" id="search">Search</button>
+              <button class="btn btn-warning" type="button" id="search">Search</button>
           </div>
         </div>
       </div>
-      <div id="info"> </div>
+      <div  style="display:none" id="weather-info"> 
+        <h2 id="city-name" class="text-warning pt-4"></h2>
+        <div style="display:inline-block"><h3 id="current-weather" class="text-white"></h3><img id="current-weather-icon" src=""/></div>
+        <table class="table font-weight-bold">
+          <thead class="text-warning">
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Min</th>
+              <th scope="col">Max</th>
+              <th scope="col">Weather</th>
+            </tr>
+          </thead>
+          <tbody class="text-white" id="table-body-content">
+          </tbody>
+          </table>
+      </div>
     </div>
     <script type="text/javascript" src="weather.js"></script>
   </body>
